@@ -12,26 +12,7 @@ the elements you want to hide. */
 <!-- A vue instance will be mounted on the ID app -->
 <div id="app">
     <div class="container">
-        <!-- You can use v-show for boolean conditionals, it will hide and show the element instead
-    of destroying and creating it everytime, however it can't be used with an else statement and
-    the thank you page would have to be triggered with another if statement or second show. -->
-        <form v-show="!submitted" class='mt-5'>
-            <div class='form-group'>
-                <label for="email">Email</label>
-                <!-- vbind is a directive which indicates that we're going to use vue to control
-            one of the standard html elements. This can also be used with :value='example data property'-->
-            <!-- v-model is a way to do two way data binding. Meaning it can be changed based on user input,
-        or programatic changes based on the data property. This is a great thing for debugging.-->
-                <input type="email" v-model="email" class="form-control form-control-lg">
-            </div>
-            <!-- Adding .prevent after click will be the same result as using event.preventDefault()
-            This is used for preventing reloading of the page after the script is run.
-        v-on can also be written with @'event'-->
-            <button type='submit' @click.prevent='process' class='btn btn-primary'>Submit</button>
-        </form>
-        <!-- v-cloak does nothing except disappear once vue is active. This is used with the style
-        we get the desired effect. -->
-        <h2 v-show='submitted' v-cloak class='mt-5'>Thanks for signing up!</h2>
+        
     </div>
 </div>
 
@@ -47,13 +28,7 @@ var url = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey
     var vm = new Vue({
         el: '#app',
         data: {
-            email: 'bill@example.com',
-            submitted: false
-        },
-        methods: {
-            process: function() {
-                this.submitted = true;
-            }
+
         }
     });
 
