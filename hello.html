@@ -36,13 +36,10 @@ the elements you want to hide. */
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!-- If the script is above the HTML and the script tag with the SRC
 it will not load. Vue will be undefined.
     If it is just above the html it will not be able to find the element APP-->
 <script>
-var apiKey = 'rfK5unOCurJ1gn1OAxXzX7bP27XnFJ4ARY2E3Gf7'
-var url = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey
 // vue data object
     var vm = new Vue({
         el: '#app',
@@ -56,10 +53,4 @@ var url = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey
             }
         }
     });
-
-    axios.get(url)
-        .then(function (res) {
-            console.clear();
-            console.log(res);
-        })
 </script>
